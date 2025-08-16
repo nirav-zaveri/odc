@@ -7,30 +7,30 @@
 
 :root {
   /* Primary Colors */
-  --color-primary: #0F52BA; /* deep blue */
-  --color-primary-50: #EBF2FF; /* lightest blue */
-  --color-primary-100: #D6E3F7; /* very light blue */
-  --color-primary-200: #BFD6F0; /* light blue */
-  --color-primary-300: #A8C4E9; /* medium light blue */
-  --color-primary-400: #91B3E2; /* medium blue */
-  --color-primary-500: #7AA2DB; /* base blue */
-  --color-primary-600: #6391D4; /* dark blue */
-  --color-primary-700: #4C7FCE; /* darker blue */
-  --color-primary-800: #356EC7; /* very dark blue */
-  --color-primary-900: #1F5CBF; /* darkest blue */
+  --color-primary: #0F52BA; /* deep forest green */
+  --color-primary-50: #F0F7F3; /* lightest forest green */
+  --color-primary-100: #D9EDE1; /* very light forest green */
+  --color-primary-200: #B3DBC3; /* light forest green */
+  --color-primary-300: #8CC9A5; /* medium light forest green */
+  --color-primary-400: #66B787; /* medium forest green */
+  --color-primary-500: #2C5F41; /* base forest green */
+  --color-primary-600: #245139; /* dark forest green */
+  --color-primary-700: #1D4331; /* darker forest green */
+  --color-primary-800: #163529; /* very dark forest green */
+  --color-primary-900: #0F2721; /* darkest forest green */
 
   /* Secondary Colors */
-  --color-secondary: #5C94B2; /* light blue */
-  --color-secondary-50: #F3F8FA; /* lightest light blue */
-  --color-secondary-100: #E0EDF2; /* very light light blue */
-  --color-secondary-200: #C7DCE4; /* light light blue */
-  --color-secondary-300: #AAD1E6; /* medium light light blue */
-  --color-secondary-400: #8CC5E8; /* medium light blue */
-  --color-secondary-500: #6FBBED; /* base light blue */
-  --color-secondary-600: #57B2F0; /* dark light blue */
-  --color-secondary-700: #4B9DDA; /* darker light blue */
-  --color-secondary-800: #4088C5; /* very dark light blue */
-  --color-secondary-900: #3573B0; /* darkest light blue */
+  --color-secondary: #7FB069; /* sage green */
+  --color-secondary-50: #F5F9F3; /* lightest sage green */
+  --color-secondary-100: #E8F2E3; /* very light sage green */
+  --color-secondary-200: #D1E5C7; /* light sage green */
+  --color-secondary-300: #BAD8AB; /* medium light sage green */
+  --color-secondary-400: #A3CB8F; /* medium sage green */
+  --color-secondary-500: #7FB069; /* base sage green */
+  --color-secondary-600: #6B9456; /* dark sage green */
+  --color-secondary-700: #577843; /* darker sage green */
+  --color-secondary-800: #435C30; /* very dark sage green */
+  --color-secondary-900: #2F401D; /* darkest sage green */
 
   /* Accent Colors */
   --color-accent: #E8A87C; /* warm terracotta */
@@ -93,11 +93,11 @@
 
 /* Custom shadow utilities */
 .shadow-gentle {
-  box-shadow: 0 4px 12px rgba(15, 82, 186, 0.08);
+  box-shadow: 0 4px 12px rgba(44, 95, 65, 0.08);
 }
 
 .shadow-gentle-hover {
-  box-shadow: 0 6px 16px rgba(15, 82, 186, 0.12);
+  box-shadow: 0 6px 16px rgba(44, 95, 65, 0.12);
 }
 
 /* Custom transition utilities */
