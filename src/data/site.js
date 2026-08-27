@@ -25,21 +25,20 @@ export const clinic = {
   phone: '+91 94289 09216', // REAL — from letterhead
   phoneDial: '+919428909216',
   whatsapp: '919428909216', // REAL number, WhatsApp deep-link format
-  email: 'info@oracledentalcare.in', // PLACEHOLDER — confirm real inbox
-  website: 'https://oracledentalcare.in', // PLACEHOLDER — confirm/buy domain
+  email: 'oracledentalho@gmail.com', // REAL
+  website: 'https://oracledental.in', // REAL
   mapsEmbedUrl:
-    'https://www.google.com/maps?q=Sushrusha+Hospital+Maneklal+Road+Navsari+Gujarat+396445&output=embed', // PLACEHOLDER — swap for the clinic's exact Google Business Profile pin
+    'https://www.google.com/maps?q=Oracle+Dental+Care+Harmony+Complex+Maneklal+Road+Navsari&output=embed',
   mapsDirectionsUrl:
-    'https://www.google.com/maps/dir/?api=1&destination=Sushrusha+Hospital+Maneklal+Road+Navsari+Gujarat+396445',
-  // PLACEHOLDER — confirm actual clinic hours
+    'https://www.google.com/maps/dir/?api=1&destination=Oracle+Dental+Care+Harmony+Complex+Maneklal+Road+Navsari+Gujarat+396445',
+  // PLACEHOLDER — confirm actual clinic hours from the Google Business Profile
   hours: [
     { days: 'Monday – Saturday', time: '10:00 AM – 2:00 PM & 5:00 PM – 9:00 PM' },
     { days: 'Sunday', time: 'By appointment only' },
   ],
   social: {
-    // PLACEHOLDER — add real handles
-    instagram: 'https://instagram.com/oracledentalcare',
-    facebook: 'https://facebook.com/oracledentalcare',
+    instagram: 'https://www.instagram.com/oracle_dental_care/', // REAL
+    facebook: 'https://www.facebook.com/drkonika.zaveri', // REAL
   },
   founded: 2011, // PLACEHOLDER — confirm year clinic opened, used for "X years" stat
 }

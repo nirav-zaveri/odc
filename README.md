@@ -148,9 +148,7 @@ Google Fonts.
 Everything below is mock content used to demonstrate the design — confirm the real values with
 the clinic before launch (all are marked `PLACEHOLDER` in `src/data/site.js`):
 
-- Clinic email address and website domain
 - Working hours
-- Instagram / Facebook links
 - Year the clinic was founded (used for the "X+ years" stat)
 - Team members beyond Dr. Chhajed
 - Patient testimonials (currently illustrative, not real reviews)
