@@ -129,6 +129,63 @@ merging into `main`).
 
 No GitHub account or technical knowledge is required for the doctor herself.
 
+## Security
+
+### What the code does
+
+- **Security headers** are set in `netlify.toml`: a strict `Content-Security-Policy`,
+  `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`,
+  `Referrer-Policy: strict-origin-when-cross-origin`, a `Permissions-Policy` denying every
+  device capability the site doesn't use, `Cross-Origin-Opener-Policy`, and HSTS.
+- **The CSP is allow-listed, not permissive.** Scripts may only load from the site's own origin;
+  images only from the site, Unsplash, and Pexels; fonts only from Google Fonts; the only
+  permitted iframe is the Google Maps embed. `object-src` and `frame-ancestors` are `'none'`.
+- **`/admin` gets its own, looser CSP** because Decap CMS is a third-party app loaded from a CDN.
+  It's still allow-listed to the specific hosts the CMS needs (unpkg, DecapBridge, GitHub API).
+- **The CSP is mirrored in `vite.config.js`** under `preview.headers`, so
+  `npm run build && npm run preview` reproduces the production policy locally. **If you change the
+  policy in one place, change it in the other** — otherwise a violation only surfaces after deploy.
+- **Blog post content is sanitized.** Markdown is rendered through `marked` and then passed
+  through `DOMPurify` (`src/components/MarkdownContent.jsx`) before being inserted, so a malicious
+  or malformed post cannot inject script into the page.
+- **No secrets in the repo.** There is no backend and no API key. The DecapBridge site ID in
+  `public/admin/config.yml` is a public client-side identifier, not a credential.
+- **`/admin` is kept out of search** via `robots.txt`, an `X-Robots-Tag` header, and a `noindex`
+  meta tag.
+
+### What only an account owner can do — launch checklist
+
+The code is only half of it. These live in the Netlify, GitHub, and DecapBridge dashboards:
+
+- [ ] **Netlify → Site configuration → Access & security → Visitor access** is set to **Public**.
+      (If this is on "Password protected" or "team members only", the whole site returns 401.)
+- [ ] **Two-factor authentication enabled** on the Netlify account, the GitHub account, and
+      DecapBridge. These three accounts can each change what the public site says — for a medical
+      practice that is the highest-value thing to protect here.
+- [ ] **DecapBridge collaborators reviewed** — it should be invite-only, and the list should
+      contain only people who should be able to publish. Remove anyone who no longer needs access.
+- [ ] **GitHub repository collaborators reviewed** — anyone with write access can change the live
+      site on the next deploy.
+- [ ] **GitHub branch protection** on the production branch: require a pull request, and disallow
+      force pushes. This prevents an accidental (or malicious) direct push going straight live.
+- [ ] **Netlify build environment variables** — there should be none beyond `NODE_VERSION`. If any
+      appear later, confirm none are secrets, since the build log is visible to collaborators.
+- [ ] **Netlify deploy notifications** on, so someone is told when the site changes.
+- [ ] **Recovery**: confirm who holds the domain registrar (GoDaddy), Netlify, GitHub, and
+      DecapBridge logins, and that the clinic — not just a contractor — can regain access to each.
+
+### Deliberate trade-offs, so nobody has to rediscover them
+
+- **`/admin` is reachable by anyone** — the login page loads for the public. That's inherent to a
+  git-based CMS with no server. It's safe because authentication and authorisation live with
+  DecapBridge and GitHub: without an invited account, nothing can be read or written. Keeping the
+  collaborator list tight is therefore the real control.
+- **`style-src` allows `'unsafe-inline'`.** React and Framer Motion set inline `style` attributes,
+  so this cannot be removed without dropping the animations. Inline *scripts* remain blocked,
+  which is the direction that actually matters for XSS.
+- **`/admin` allows `'unsafe-eval'`.** Decap CMS's bundle requires it. This is scoped to the
+  `/admin` path only and does not apply to any page a patient visits.
+
 ## Brand & design system
 
 Colors were sampled directly from the clinic's real logo and letterhead, not guessed:

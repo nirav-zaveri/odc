@@ -21,6 +21,9 @@ export default function Services() {
 
       <section className="py-20 sm:py-24">
         <div className="container-page">
+          {/* The grid sits directly under the page h1 with no visible section
+              heading, so this keeps the outline from jumping h1 -> h3. */}
+          <h2 className="sr-only">All treatments we offer</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <ServiceCard key={service.slug} service={service} index={index} />

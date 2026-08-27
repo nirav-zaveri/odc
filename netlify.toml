@@ -11,6 +11,71 @@
   to = "/index.html"
   status = 200
 
+# ---------------------------------------------------------------------------
+# SECURITY HEADERS
+#
+# The Content-Security-Policy below is mirrored in vite.config.js under
+# `preview.headers`, so `npm run build && npm run preview` reproduces the
+# production policy locally. If you change one, change the other — otherwise
+# a CSP violation will only show up after deploying.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Clickjacking: belt (CSP frame-ancestors) and braces (legacy header).
+    X-Frame-Options = "DENY"
+    # Stop browsers guessing content types.
+    X-Content-Type-Options = "nosniff"
+    # Don't leak full URLs to third parties (e.g. the Google Maps embed).
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # This is a brochure site: it needs none of these device capabilities.
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = """
+      default-src 'self'; \
+      base-uri 'self'; \
+      object-src 'none'; \
+      frame-ancestors 'none'; \
+      form-action 'self'; \
+      script-src 'self'; \
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+      font-src 'self' https://fonts.gstatic.com; \
+      img-src 'self' data: https://images.unsplash.com https://images.pexels.com; \
+      frame-src https://www.google.com; \
+      connect-src 'self'; \
+      upgrade-insecure-requests"""
+
+# ---------------------------------------------------------------------------
+# The blog admin panel is a third-party app (Decap CMS) loaded from a CDN and
+# talking to DecapBridge + GitHub, so it cannot run under the strict policy
+# above. It gets its own, necessarily looser CSP — still far tighter than no
+# policy at all, and it stays out of search engines via robots.txt and the
+# noindex meta tag in public/admin/index.html.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Robots-Tag = "noindex, nofollow"
+    Content-Security-Policy = """
+      default-src 'self'; \
+      base-uri 'self'; \
+      object-src 'none'; \
+      frame-ancestors 'none'; \
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; \
+      style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; \
+      font-src 'self' data: https://fonts.gstatic.com https://unpkg.com; \
+      img-src 'self' data: blob: https:; \
+      connect-src 'self' https://auth.decapbridge.com https://gateway.decapbridge.com https://api.github.com https://unpkg.com; \
+      form-action 'self' https://auth.decapbridge.com; \
+      frame-src 'self'"""
+
+# Hashed build assets are immutable — cache them hard.
 [[headers]]
   for = "/assets/*"
   [headers.values]

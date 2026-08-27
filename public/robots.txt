@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+# The blog admin panel — no value in search results, and no reason to advertise it.
 Disallow: /admin/
+
+Sitemap: https://oracledental.in/sitemap.xml

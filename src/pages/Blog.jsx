@@ -30,6 +30,8 @@ export default function Blog() {
 
       <section className="py-20 sm:py-24">
         <div className="container-page">
+          {/* Keeps the heading outline from jumping h1 -> h3 (post titles). */}
+          <h2 className="sr-only">All blog posts</h2>
           {tags.length > 0 && (
             <Reveal className="mb-12 flex flex-wrap justify-center gap-2">
               {['All', ...tags].map((tag) => (

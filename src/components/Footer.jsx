@@ -40,19 +40,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Explore
-            </h3>
-            <ul className="mt-5 space-y-3">
+            </h2>
+            <ul className="mt-5 space-y-1">
               {nav.map((item) => (
                 <li key={item.to}>
-                  <Link to={item.to} className="text-primary-200 transition-colors hover:text-white">
+                  <Link to={item.to} className="inline-block py-1 text-primary-200 transition-colors hover:text-white">
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/services" className="text-primary-200 transition-colors hover:text-white">
+                <Link to="/services" className="inline-block py-1 text-primary-200 transition-colors hover:text-white">
                   All Treatments
                 </Link>
               </li>
@@ -60,9 +60,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
               Get in Touch
-            </h3>
+            </h2>
             <ul className="mt-5 space-y-4 text-primary-200">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-secondary-300" />
@@ -73,13 +73,13 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-secondary-300" />
-                <a href={`tel:${clinic.phoneDial}`} className="hover:text-white">
+                <a href={`tel:${clinic.phoneDial}`} className="inline-block py-1.5 hover:text-white">
                   {clinic.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-secondary-300" />
-                <a href={`mailto:${clinic.email}`} className="hover:text-white">
+                <a href={`mailto:${clinic.email}`} className="inline-block py-1.5 hover:text-white">
                   {clinic.email}
                 </a>
               </li>
@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-primary-300">
           {services.slice(0, 6).map((s) => (
-            <Link key={s.slug} to={`/services#${s.slug}`} className="hover:text-white">
+            <Link key={s.slug} to={`/services#${s.slug}`} className="inline-block py-1.5 hover:text-white">
               {s.title}
             </Link>
           ))}

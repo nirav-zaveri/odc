@@ -51,6 +51,8 @@ export default function Contact() {
 
       <section className="py-20 sm:py-24">
         <div className="container-page">
+          {/* Keeps the heading outline from jumping h1 -> h3 (card titles). */}
+          <h2 className="sr-only">Ways to reach us</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {contactCards.map((card, i) => (
               <Reveal key={card.title} delay={i * 0.08} className="card flex flex-col items-center gap-4 p-7 text-center">
@@ -69,7 +71,7 @@ export default function Contact() {
                   href={card.action.href}
                   target={card.action.external ? '_blank' : undefined}
                   rel={card.action.external ? 'noopener noreferrer' : undefined}
-                  className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-800"
+                  className="mt-auto inline-flex min-h-[44px] items-center gap-2 px-2 text-sm font-semibold text-primary-700 hover:text-primary-800"
                 >
                   <card.action.icon className="h-4 w-4" />
                   {card.action.label}
