@@ -7,6 +7,23 @@
     scroll-behavior: smooth;
   }
 
+  /*
+   * MotionConfig in main.jsx covers Framer Motion, but not the CSS keyframe
+   * animations declared in tailwind.config.js (the floating tooth marks, the
+   * WhatsApp pulse ring). This catches those, plus hover transitions and smooth
+   * scrolling, so "reduce motion" is honoured across the whole site.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
     @apply bg-background text-ink-800;
   }
