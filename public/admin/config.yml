@@ -1,0 +1,60 @@
+# Decap CMS configuration — this file controls the /admin editing panel.
+# Full reference: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main # the branch Netlify deploys from; change if your production branch differs
+
+# Where uploaded blog images are stored, and the public URL they're served from.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Requires manual publish/unpublish — safer default for a small clinic team.
+publish_mode: simple
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: title
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "URL Slug",
+          name: "slug",
+          widget: "string",
+          required: false,
+          hint: "Leave blank to auto-generate from the title. Only edit this for an existing post if you also update any links to it.",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - {
+          label: "Excerpt",
+          name: "excerpt",
+          widget: "text",
+          hint: "A one to two sentence summary shown on the blog list and when shared on social media.",
+        }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          hint: "e.g. Patient Guide, Cosmetic Dentistry, Clinic Update",
+        }
+      - { label: "Author", name: "author", widget: "string", default: "Dr. Konica Chhajed" }
+      - {
+          label: "Save as Draft",
+          name: "draft",
+          widget: "boolean",
+          default: false,
+          hint: "Draft posts are saved but won't appear on the live site until unchecked.",
+        }
+      - { label: "Post Content", name: "body", widget: "markdown" }

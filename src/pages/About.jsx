@@ -1,0 +1,172 @@
+import { ShieldCheck, HeartHandshake, GraduationCap, Users2, MessageCircle, Phone } from 'lucide-react'
+import SEO from '../components/SEO'
+import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
+import SectionHeading from '../components/SectionHeading'
+import SmartImage from '../components/SmartImage'
+import { clinic, doctor, team } from '../data/site'
+import { photos } from '../data/images'
+
+const values = [
+  {
+    icon: HeartHandshake,
+    title: 'Patient-First, Always',
+    description: "Every recommendation starts with what's genuinely best for you — never what's easiest for us.",
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Hygiene Without Compromise',
+    description: 'Strict sterilization and single-use protocols on every instrument, for every patient, every time.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Continual Learning',
+    description: "We stay current with modern techniques so your care reflects the best of today's dentistry.",
+  },
+  {
+    icon: Users2,
+    title: 'Rooted in Navsari',
+    description: 'A local clinic that knows its patients by name, built for the long term — not just one visit.',
+  },
+]
+
+export default function About() {
+  return (
+    <>
+      <SEO
+        title="About Dr. Chhajed & Our Team"
+        description="Meet Dr. Konica Chhajed, BDS, founder of Oracle Dental Care, and learn about our approach to gentle, multi-speciality dental care in Navsari."
+        path="/about"
+      />
+      <PageHero
+        eyebrow="About Us"
+        title="Care that feels personal, backed by real expertise"
+        description="Get to know the clinic — and the person — behind Oracle Dental Care."
+      />
+
+      {/* Doctor bio */}
+      <section className="py-20 sm:py-24">
+        <div className="container-page grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+          <Reveal direction="right" className="lg:sticky lg:top-28">
+            <div className="overflow-hidden rounded-[2rem] shadow-soft-lg">
+              <SmartImage photo={photos.doctorPortrait} className="aspect-[4/5] w-full object-cover" />
+            </div>
+          </Reveal>
+          <Reveal direction="left">
+            <span className="eyebrow">Founder & Chief Dental Surgeon</span>
+            <h2 className="mt-4 font-display text-3xl font-extrabold text-ink-900 sm:text-4xl">
+              {doctor.name}
+            </h2>
+            <p className="mt-1 font-semibold text-primary-700">
+              {doctor.credentials} &middot; {doctor.registration}
+            </p>
+            <div className="mt-6 space-y-4 text-lg text-ink-600">
+              {doctor.bio.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {doctor.highlights.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3 rounded-xl bg-primary-50 p-4 text-sm font-medium text-primary-900"
+                >
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-surface py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Our Approach"
+            title="What guides every treatment decision"
+            description="Four principles that shape how we practice dentistry, every single day."
+          />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value, i) => (
+              <Reveal key={value.title} delay={i * 0.08} className="card p-7 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-700">
+                  <value.icon className="h-7 w-7" />
+                </div>
+                <h3 className="mt-5 font-display font-bold text-ink-900">{value.title}</h3>
+                <p className="mt-2 text-sm text-ink-500">{value.description}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading eyebrow="Our Team" title="The people behind your care" />
+          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member, i) => (
+              <Reveal key={member.name} delay={i * 0.08} className="card overflow-hidden text-center">
+                <SmartImage
+                  photo={{ ...photos.teamMember, alt: member.name }}
+                  className="aspect-square w-full object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-ink-900">{member.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-primary-700">{member.role}</p>
+                  <p className="mt-1 text-xs text-ink-400">{member.credentials}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="bg-surface py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading eyebrow="Inside Oracle Dental Care" title="A calm, modern clinic environment" />
+          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[photos.clinicReception, photos.treatmentRoom, photos.dentalChair, photos.clinicConsult].map(
+              (photo, i) => (
+                <Reveal key={photo.alt} delay={i * 0.06} className="overflow-hidden rounded-2xl">
+                  <SmartImage photo={photo} className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105" />
+                </Reveal>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-brand-gradient py-20">
+        <div className="absolute inset-0 bg-brand-radial" />
+        <div className="container-page relative text-center">
+          <Reveal>
+            <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl">
+              Come meet the team in person
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-primary-100">
+              We'd love to welcome you to {clinic.name}. Reach out any time.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href={`https://wa.me/${clinic.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent w-full sm:w-auto"
+              >
+                <MessageCircle className="h-5 w-5" /> Book on WhatsApp
+              </a>
+              <a href={`tel:${clinic.phoneDial}`} className="btn-ghost-light w-full sm:w-auto">
+                <Phone className="h-5 w-5" /> Call {clinic.phone}
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  )
+}

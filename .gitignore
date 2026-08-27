@@ -1,4 +1,21 @@
-.DS_Store
+# Dependencies
 node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Editor / OS
+.DS_Store
 .idea
-package-lock.json
+.vscode/*
+!.vscode/extensions.json
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*

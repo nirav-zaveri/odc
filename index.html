@@ -1,34 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oracle Dental Care</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <meta name="theme-color" content="#0D53A5" />
+    <title>Oracle Dental Care | Multi-Speciality Dental Clinic, Navsari</title>
+    <meta
+      name="description"
+      content="Oracle Dental Care, Navsari — Dr. Konica Chhajed (BDS) and team offer gentle, advanced multi-speciality dental care for the whole family. Book your visit today."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background text-ink-800 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!--
+      Netlify Identity widget + redirect: required so that the invite/reset
+      email link (which lands here, on "/", with an auth token in the URL)
+      can log the doctor in and forward them straight to /admin.
+      See: https://decapcms.org/docs/add-to-your-site/#netlify-identity
+    -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Redirect to homepage after a brief moment
-        setTimeout(function() {
-            window.location.href = 'pages/homepage.html';
-        }, 100);
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user) => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/'
+            })
+          }
+        })
+      }
     </script>
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Foracleden4812back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
-</head>
-<body>
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
-        <div style="text-align: center;">
-            <h1>Welcome to Oracle Dental Care</h1>
-            <p>Redirecting to homepage...</p>
-            <div style="margin-top: 20px;">
-                <div style="border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 0 auto;"></div>
-            </div>
-        </div>
-    </div>
-    
-    <style>
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-</body>
+  </body>
 </html>

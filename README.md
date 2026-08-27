@@ -1,82 +1,158 @@
-# HTML
+# Oracle Dental Care — Website
 
-A modern HTML project utilizing Tailwind CSS for building responsive web applications with minimal setup.
+The official website for **Oracle Dental Care**, a multi-speciality dental clinic in Navsari,
+Gujarat, led by Dr. Konica Chhajed. Built as a modern React site with a built-in blog the doctor
+can update herself — no code required.
 
-## 🚀 Features
+> **Note on content:** most of the text on this site (working hours, team bios, testimonials,
+> some contact details) is placeholder content written to demonstrate the design. Real data still
+> needs to be confirmed — see [Placeholder data to replace](#placeholder-data-to-replace) below.
 
-- **HTML5** - Modern HTML structure with best practices
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **Custom Components** - Pre-built component classes for buttons and containers
-- **NPM Scripts** - Easy-to-use commands for development and building
-- **Responsive Design** - Mobile-first approach for all screen sizes
+## Tech stack
 
-## 📋 Prerequisites
+- **[React 18](https://react.dev/)** + **[Vite](https://vitejs.dev/)** — fast, simple build tooling
+- **[React Router](https://reactrouter.com/)** — client-side page navigation
+- **[Tailwind CSS](https://tailwindcss.com/)** — utility-first styling, themed to the clinic's brand colors
+- **[Framer Motion](https://www.framer.com/motion/)** — the scroll animations, hero motion, and page transitions
+- **[Lucide](https://lucide.dev/)** — icon set (free, MIT licensed)
+- **[Decap CMS](https://decapcms.org/)** — free, open-source git-based admin panel for the blog
+- Deployed on **[Netlify](https://www.netlify.com/)**
 
-- Node.js (v12.x or higher)
-- npm or yarn
+No backend/database — the whole site is static files, and blog posts are plain Markdown files
+committed to this repository.
 
-## 🛠️ Installation
+## Getting started
 
-1. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
+npm run dev       # start the local dev server (http://localhost:5173)
+npm run build     # production build, output in /dist
+npm run preview   # preview the production build locally
+npm run lint       # lint the codebase
 ```
 
-2. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-## 📁 Project Structure
+## Project structure
 
 ```
-html_app/
-├── css/
-│   ├── tailwind.css   # Tailwind source file with custom utilities
-│   └── main.css       # Compiled CSS (generated)
-├── pages/             # HTML pages
-├── index.html         # Main entry point
-├── package.json       # Project dependencies and scripts
-└── tailwind.config.js # Tailwind CSS configuration
+public/
+  admin/               ← Decap CMS admin panel (the doctor's blog editor)
+  images/uploads/       ← images uploaded through the blog editor land here
+  favicon*.png, icon-*.png, apple-touch-icon.png  ← generated from the real logo
+
+src/
+  assets/               ← the real Oracle Dental Care logo (extracted from the provided PDF)
+  components/           ← reusable UI building blocks (Navbar, Footer, cards, etc.)
+  content/blog/          ← blog posts, as Markdown files with frontmatter
+  data/
+    site.js             ← ⭐ ALL clinic content lives here: address, phone, services, team, FAQs…
+    images.js            ← stock photo placeholders (swap for real photos any time)
+  pages/                ← one file per route (Home, Services, About, Contact, Blog, BlogPost)
+  utils/
+    blog.js             ← loads & parses every file in src/content/blog automatically
 ```
 
-## 🎨 Styling
+### Editing site content
 
-This project uses Tailwind CSS for styling. Custom utility classes include:
+**You will almost never need to touch a component file.** Nearly everything on the site —
+address, phone number, services list, team members, testimonials, FAQs, stats — is defined in
+one place: **`src/data/site.js`**. Open it, edit the relevant field, save, and the whole site
+updates. Every field that's still placeholder/mock data is commented `// PLACEHOLDER`.
 
+Photos are similarly centralized in **`src/data/images.js`**. To replace a placeholder stock photo
+with a real one:
 
-## 🧩 Customization
+1. Drop the image file in `src/assets/` (e.g. `src/assets/doctor.jpg`).
+2. In `src/data/images.js`, import it and point the relevant entry's `src` at it.
 
-To customize the Tailwind configuration, edit the `tailwind.config.js` file:
+## The blog
 
+There are two ways to publish a blog post — pick whichever fits.
 
-## 📦 Build for Production
+### Option A — the admin panel (recommended for the doctor)
 
-Build the CSS for production:
+Once deployed to Netlify with Identity enabled (see below), go to **`yoursite.com/admin`**, log
+in, and use the visual editor: title, cover photo, tags, and a rich-text/Markdown body. Hit
+**Publish** and the post goes live within about a minute (Netlify rebuilds the site
+automatically).
 
-```bash
-npm run build:css
-# or
-yarn build:css
+### Option B — add a Markdown file directly
+
+Create a new file in `src/content/blog/`, e.g. `src/content/blog/my-new-post.md`:
+
+```markdown
+---
+title: "Your Post Title"
+slug: "your-post-title"
+date: "2026-08-27"
+excerpt: "A one-sentence summary shown on the blog list page."
+cover: "https://images.unsplash.com/photo-xxxxxxx?w=1600&h=900&auto=format&fit=crop"
+tags: ["Patient Guide"]
+author: "Dr. Konica Chhajed"
+draft: false
+---
+
+Your post content, in Markdown, goes here.
 ```
 
-## 📱 Responsive Design
+Commit and push — the post appears automatically, newest first, no other code changes needed.
 
-The app is built with responsive design using Tailwind CSS breakpoints:
+## Deploying to Netlify
 
-- `sm`: 640px and up
-- `md`: 768px and up
-- `lg`: 1024px and up
-- `xl`: 1280px and up
-- `2xl`: 1536px and up
+1. **Push this repository to GitHub** (already done if you're reading this from the repo).
+2. In Netlify, click **Add new site → Import an existing project**, and select this repo.
+   Netlify will read `netlify.toml` automatically — build command and output folder are already
+   configured, no manual setup needed.
+3. Deploy. Your site will be live at a `*.netlify.app` URL (add a custom domain under **Domain
+   settings** whenever you're ready).
 
-## 🙏 Acknowledgments
+### Enabling the blog admin panel (one-time setup)
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by HTML and Tailwind CSS
+The `/admin` editor needs **Netlify Identity** (for login) and **Git Gateway** (so it can commit
+posts to this repo on the doctor's behalf) turned on. This only needs to be done once, by whoever
+manages the Netlify account:
 
-Built with ❤️ on Rocket.new
+1. In the Netlify dashboard, open your site → **Site configuration → Identity → Enable Identity**.
+2. Under **Identity → Registration**, set it to **Invite only** (so random visitors can't sign
+   up).
+3. Under **Identity → Services**, enable **Git Gateway**.
+4. Under **Identity → Invite users**, invite the doctor's email address. She'll receive an email
+   with a link to set a password.
+5. After setting her password, she'll be redirected straight into `/admin` — from then on she can
+   log in any time at `yoursite.com/admin`.
+
+That's the entire setup. No GitHub account or technical knowledge is required for the doctor.
+
+## Brand & design system
+
+Colors were sampled directly from the clinic's real logo and letterhead, not guessed:
+
+| Token | Hex | Source |
+|---|---|---|
+| `primary` | `#0D53A5` | Sampled from the logo mark |
+| `secondary` (accent) | `#00ADEF` | Sampled from the letterhead footer bar |
+
+Both are defined as full Tailwind color scales in `tailwind.config.js`, so every shade used across
+the site (`bg-primary-50` … `bg-primary-900`, etc.) is derived consistently from the real brand
+colors. Fonts are **Plus Jakarta Sans** (headings) and **Inter** (body text), loaded free from
+Google Fonts.
+
+## Placeholder data to replace
+
+Everything below is mock content used to demonstrate the design — confirm the real values with
+the clinic before launch (all are marked `PLACEHOLDER` in `src/data/site.js`):
+
+- Clinic email address and website domain
+- Working hours
+- Instagram / Facebook links
+- Year the clinic was founded (used for the "X+ years" stat)
+- Team members beyond Dr. Chhajed
+- Patient testimonials (currently illustrative, not real reviews)
+- All photos (currently stock photography — see the "Do you have real photos" note in project
+  history; swap via `src/data/images.js` any time)
+- The 5 sample blog posts are original writing for this project, not content the clinic has
+  actually published — read them before launch and decide whether to keep, edit, or replace them.
+
+## Where the old site went
+
+This project previously shipped as a static HTML/Tailwind site. That version is preserved as-is
+on the `legacy-static-site` branch of this repository for reference.

@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-ink-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink-900;
+  }
+
+  ::selection {
+    @apply bg-secondary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-display font-semibold text-sm sm:text-base transition-all duration-300 ease-out;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-700 text-white shadow-soft hover:bg-primary-800 hover:shadow-soft-lg active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply btn bg-secondary text-white shadow-glow hover:bg-secondary-600 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-700/20 text-primary-800 hover:border-primary-700 hover:bg-primary-50 active:scale-[0.98];
+  }
+
+  .btn-ghost-light {
+    @apply btn border-2 border-white/30 text-white hover:bg-white/10 active:scale-[0.98];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-secondary-50 px-4 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary-700 ring-1 ring-inset ring-secondary-200;
+  }
+
+  .card {
+    @apply rounded-xl2 bg-white ring-1 ring-ink-100 shadow-soft;
+  }
+
+  .prose-blog {
+    @apply prose prose-slate max-w-none prose-headings:font-display prose-headings:text-ink-900 prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl2 prose-strong:text-ink-900;
+  }
+}
+
+/* Custom scrollbar — subtle, brand-tinted */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.primary.200');
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.primary.300');
+}
