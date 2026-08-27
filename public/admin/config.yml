@@ -78,7 +78,7 @@ collections:
           required: false,
           hint: "e.g. Patient Guide, Cosmetic Dentistry, Clinic Update",
         }
-      - { label: "Author", name: "author", widget: "string", default: "Dr. Konica Chhajed" }
+      - { label: "Author", name: "author", widget: "string", default: "Dr. Konika Chhajed Zaveri" }
       - {
           label: "Save as Draft",
           name: "draft",

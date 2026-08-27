@@ -48,8 +48,19 @@ export default function About() {
       <section className="py-20 sm:py-24">
         <div className="container-page grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <Reveal direction="right" className="lg:sticky lg:top-28">
-            <div className="overflow-hidden rounded-[2rem] shadow-soft-lg">
-              <SmartImage photo={photos.doctorPortrait} className="aspect-[4/5] w-full object-cover" />
+            {/* Contained portrait card: the source photograph is modest
+                resolution, so it is shown at close to its native size on a
+                brand-tinted panel instead of being blown up full-bleed. */}
+            <div className="mx-auto max-w-sm overflow-hidden rounded-[2rem] bg-gradient-to-b from-primary-50 to-secondary-50 p-3 shadow-soft-lg">
+              <SmartImage
+                photo={photos.doctorPortrait}
+                className="w-full rounded-[1.5rem] bg-white object-cover"
+                loading="eager"
+              />
+              <div className="px-3 pb-2 pt-4 text-center">
+                <p className="font-display font-bold text-ink-900">{doctor.name}</p>
+                <p className="mt-0.5 text-sm text-primary-700">{doctor.role}</p>
+              </div>
             </div>
           </Reveal>
           <Reveal direction="left">

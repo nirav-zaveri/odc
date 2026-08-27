@@ -1,8 +1,11 @@
 // ---------------------------------------------------------------------------
-// STOCK PHOTOGRAPHY — placeholder imagery until the clinic supplies real
-// photos (interior, Dr. Chhajed, team, patients). Swap any entry here for a
-// real photo (e.g. `src: '/images/doctor.jpg'`) with zero changes elsewhere.
+// IMAGERY. `doctorPortrait` is the clinic's own photograph. Everything else is
+// still stock placeholder imagery pending real clinic photos (interior, team,
+// patients) — swap any entry here for a real one with no changes elsewhere:
+// drop the file in src/assets/, import it, and set it as `src`.
 // ---------------------------------------------------------------------------
+
+import doctorPortraitImg from '../assets/doctor.jpg'
 
 const unsplash = (id, w, h) =>
   `https://images.unsplash.com/photo-${id}?q=80&w=${w}&h=${h}&auto=format&fit=crop&ixlib=rb-4.0.3`
@@ -26,10 +29,13 @@ export const photos = {
     fallback: pexels('4173251', 1400, 1000),
     alt: 'Welcoming dental clinic reception area',
   },
+  // The clinic's own photograph of Dr. Chhajed Zaveri. Native size is modest
+  // (380x475), so it is displayed in a contained portrait card rather than a
+  // full-bleed image, which keeps it sharp. If a higher-resolution original
+  // becomes available, replace src/assets/doctor.jpg and nothing else changes.
   doctorPortrait: {
-    src: unsplash('1559839734-2b71ea197ec2', 900, 900),
-    fallback: pexels('6812540', 900, 900),
-    alt: 'Dr. Konika Chhajed Zaveri, BDS — Founder, Oracle Dental Care',
+    src: doctorPortraitImg,
+    alt: 'Dr. Konika Chhajed Zaveri, BDS — Founder & Chief Dental Surgeon, Oracle Dental Care',
   },
   teamMember: {
     src: unsplash('1612349317150-e413f6a5b16d', 700, 700),

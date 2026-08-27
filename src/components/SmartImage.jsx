@@ -13,7 +13,9 @@ export default function SmartImage({ photo, className = '', loading = 'lazy', ..
       loading={loading}
       className={className}
       onError={() => {
-        if (src !== photo.fallback) setSrc(photo.fallback)
+        // Local/bundled images have no fallback — leave them alone rather than
+        // swapping in `undefined` and guaranteeing a broken image.
+        if (photo.fallback && src !== photo.fallback) setSrc(photo.fallback)
       }}
       {...rest}
     />
