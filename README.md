@@ -70,10 +70,9 @@ There are two ways to publish a blog post — pick whichever fits.
 
 ### Option A — the admin panel (recommended for the doctor)
 
-Once deployed to Netlify with Identity enabled (see below), go to **`yoursite.com/admin`**, log
-in, and use the visual editor: title, cover photo, tags, and a rich-text/Markdown body. Hit
-**Publish** and the post goes live within about a minute (Netlify rebuilds the site
-automatically).
+Once DecapBridge is connected (see below), go to **`yoursite.com/admin`**, log in, and use the
+visual editor: title, cover photo, tags, and a rich-text/Markdown body. Hit **Publish** and the
+post goes live within about a minute (Netlify rebuilds the site automatically).
 
 ### Option B — add a Markdown file directly
 
@@ -107,20 +106,28 @@ Commit and push — the post appears automatically, newest first, no other code 
 
 ### Enabling the blog admin panel (one-time setup)
 
-The `/admin` editor needs **Netlify Identity** (for login) and **Git Gateway** (so it can commit
-posts to this repo on the doctor's behalf) turned on. This only needs to be done once, by whoever
-manages the Netlify account:
+The `/admin` editor needs an identity/auth provider so it can commit posts to this repo on the
+doctor's behalf. This project originally used Netlify's own **Identity + Git Gateway**, but
+Netlify deprecated Git Gateway, so it now uses **[DecapBridge](https://decapbridge.com)** instead
+— a free, purpose-built replacement that speaks the same protocol. This only needs to be set up
+once, by whoever manages the site:
 
-1. In the Netlify dashboard, open your site → **Site configuration → Identity → Enable Identity**.
-2. Under **Identity → Registration**, set it to **Invite only** (so random visitors can't sign
-   up).
-3. Under **Identity → Services**, enable **Git Gateway**.
-4. Under **Identity → Invite users**, invite the doctor's email address. She'll receive an email
-   with a link to set a password.
-5. After setting her password, she'll be redirected straight into `/admin` — from then on she can
-   log in any time at `yoursite.com/admin`.
+1. Sign up at [decapbridge.com](https://decapbridge.com) (free tier: up to 3 sites, 10
+   collaborators).
+2. Create a site, connect it to this GitHub repo (`nirav-zaveri/odc`), and set the content path to
+   `public/admin` and the branch to whichever branch Netlify actually deploys from.
+3. DecapBridge generates a `backend:` block for `config.yml` — it's already wired into
+   `public/admin/config.yml` in this repo. If you ever recreate the DecapBridge site (new site ID),
+   update the `auth_endpoint`/`auth_token_endpoint` values there to match.
+4. In the DecapBridge dashboard, invite the doctor's email as a collaborator. She'll get an email
+   to confirm, and from then on can log in any time at `yoursite.com/admin`.
 
-That's the entire setup. No GitHub account or technical knowledge is required for the doctor.
+**Important:** the `branch:` field in `public/admin/config.yml` must exactly match the branch your
+Netlify site deploys from — if they don't match, published posts will commit to a branch that
+never goes live. Update both together whenever you switch Netlify's production branch (e.g. after
+merging into `main`).
+
+No GitHub account or technical knowledge is required for the doctor herself.
 
 ## Brand & design system
 

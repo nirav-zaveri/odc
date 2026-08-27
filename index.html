@@ -24,24 +24,5 @@
   <body class="bg-background text-ink-800 font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!--
-      Netlify Identity widget + redirect: required so that the invite/reset
-      email link (which lands here, on "/", with an auth token in the URL)
-      can log the doctor in and forward them straight to /admin.
-      See: https://decapcms.org/docs/add-to-your-site/#netlify-identity
-    -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/'
-            })
-          }
-        })
-      }
-    </script>
   </body>
 </html>
