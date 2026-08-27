@@ -1,11 +1,11 @@
 ---
-title: "Why We Switched to Digital X-Rays — A Note From Dr. Konica Chhajed"
+title: "Why We Switched to Digital X-Rays — A Note From Dr. Konika Chhajed Zaveri"
 slug: "why-we-switched-to-digital-xrays"
 date: "2026-03-10"
 excerpt: "A behind-the-scenes look at why we invested in digital radiography, and what it actually changes for you as a patient."
 cover: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Clinic Update", "Technology"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 
@@ -31,4 +31,4 @@ Digital images store securely and can be compared side-by-side across years, mak
 
 Nothing changes about how an X-ray feels during your visit. What changes is the safety margin, the speed, and how clearly we can show you exactly what we're seeing and why. If you're curious or have questions about your own X-rays at your next visit, please ask — I'm always glad to walk you through them.
 
-— Dr. Konica Chhajed
+— Dr. Konika Chhajed Zaveri

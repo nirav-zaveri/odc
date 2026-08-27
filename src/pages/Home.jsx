@@ -22,6 +22,7 @@ import StatCounter from '../components/StatCounter'
 import SmartImage from '../components/SmartImage'
 import ToothMark from '../components/ToothMark'
 import ImplantHighlight from '../components/ImplantHighlight'
+import LocalBusinessSchema from '../components/LocalBusinessSchema'
 import { clinic, doctor, services, stats, testimonials, featuredTestimonials, faqs } from '../data/site'
 import { photos } from '../data/images'
 import { getAllPosts } from '../utils/blog'
@@ -67,9 +68,10 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="Oracle Dental Care, Navsari — Dr. Konica Chhajed (BDS) and team offer gentle, advanced multi-speciality dental care for the whole family. Book your visit today."
+        description="Oracle Dental Care — multi-speciality dental clinic & implant centre in Navsari. Dr. Konika Chhajed Zaveri (BDS) offers gentle, painless dental care for the whole family. Book on WhatsApp."
         path="/"
       />
+      <LocalBusinessSchema />
 
       {/* ---------------------------------------------------------------- HERO */}
       <section className="relative overflow-hidden bg-brand-gradient">
@@ -115,7 +117,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.16 }}
               className="mx-auto mt-6 max-w-xl text-lg text-primary-100 lg:mx-0"
             >
-              Advanced dentistry with a gentle touch, led by Dr. Konica Chhajed — right in the heart of
+              Advanced dentistry with a gentle touch, led by Dr. Konika Chhajed Zaveri — right in the heart of
               Navsari.
             </motion.p>
 

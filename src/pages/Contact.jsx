@@ -108,6 +108,9 @@ export default function Contact() {
                 </div>
               ))}
             </div>
+            {clinic.hoursNote && (
+              <p className="mt-4 text-sm text-ink-400">{clinic.hoursNote}</p>
+            )}
             <div className="mt-8 rounded-2xl bg-primary-950 p-6 text-white">
               <p className="font-display font-bold">Dental emergency?</p>
               <p className="mt-1 text-sm text-primary-200">

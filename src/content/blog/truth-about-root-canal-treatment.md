@@ -5,7 +5,7 @@ date: "2026-06-05"
 excerpt: "\"Root canal\" has an unfairly scary reputation. Here's what modern RCT actually feels like, and why it's usually the procedure that ends your pain — not causes it."
 cover: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Root Canal", "Myth-Busting"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 

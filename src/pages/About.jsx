@@ -34,8 +34,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Dr. Chhajed & Our Team"
-        description="Meet Dr. Konica Chhajed, BDS, founder of Oracle Dental Care, and learn about our approach to gentle, multi-speciality dental care in Navsari."
+        title="About Dr. Konika Chhajed Zaveri"
+        description="Meet Dr. Konika Chhajed Zaveri, BDS, founder of Oracle Dental Care, and learn about our approach to gentle, multi-speciality dental care in Navsari."
         path="/about"
       />
       <PageHero
@@ -129,7 +129,7 @@ export default function About() {
         <div className="container-page relative text-center">
           <Reveal>
             <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl">
-              Come meet the team in person
+              Come and see us in person
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-primary-100">
               We'd love to welcome you to {clinic.name}. Reach out any time.

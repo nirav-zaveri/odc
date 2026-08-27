@@ -29,7 +29,7 @@ export const photos = {
   doctorPortrait: {
     src: unsplash('1559839734-2b71ea197ec2', 900, 900),
     fallback: pexels('6812540', 900, 900),
-    alt: 'Dr. Konica Chhajed, BDS — Founder, Oracle Dental Care',
+    alt: 'Dr. Konika Chhajed Zaveri, BDS — Founder, Oracle Dental Care',
   },
   teamMember: {
     src: unsplash('1612349317150-e413f6a5b16d', 700, 700),

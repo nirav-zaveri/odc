@@ -33,12 +33,11 @@ export const clinic = {
     'https://www.google.com/maps/dir/?api=1&destination=Oracle+Dental+Care+Harmony+Complex+Maneklal+Road+Navsari+Gujarat+396445',
   // Link patients to the live Google listing to read all reviews / leave one.
   googleReviewsUrl: 'https://share.google/EnLnu941AAiTbFRrt',
-  // PLACEHOLDER — only "closes 7:30 PM" was confirmed. Replace with the full
-  // per-day hours shown on the clinic's Google Business Profile.
   hours: [
-    { days: 'Monday – Saturday', time: '10:00 AM – 7:30 PM' },
-    { days: 'Sunday', time: 'By appointment only' },
+    { days: 'Monday – Saturday', time: '9:30 AM – 7:30 PM' },
+    { days: 'Sunday', time: 'Closed' },
   ],
+  hoursNote: 'Closed on Sundays and public holidays.',
   social: {
     instagram: 'https://www.instagram.com/oracle_dental_care/',
     facebook: 'https://www.facebook.com/drkonika.zaveri',

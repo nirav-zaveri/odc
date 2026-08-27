@@ -5,7 +5,7 @@ date: "2026-07-18"
 excerpt: "Not every dental problem waits politely for your next check-up. Here are five warning signs that mean it's time to call us right away."
 cover: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Patient Guide", "Emergency Care"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 

@@ -5,7 +5,7 @@ date: "2026-04-02"
 excerpt: "Charcoal powders, whitening pens, DIY lemon-and-baking-soda hacks — we break down what genuinely brightens your smile and what just wears down your enamel."
 cover: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Cosmetic Dentistry", "Myth-Busting"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 

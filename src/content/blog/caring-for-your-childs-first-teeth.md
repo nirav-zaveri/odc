@@ -5,7 +5,7 @@ date: "2026-05-12"
 excerpt: "From the first tooth to the first dental visit — a simple, practical guide for parents on building healthy habits early, without the stress."
 cover: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Pediatric Dentistry", "Parenting"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 

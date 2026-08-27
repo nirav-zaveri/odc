@@ -19,7 +19,7 @@ export default function Blog() {
     <>
       <SEO
         title="Blog"
-        description="Dental health tips, myth-busting, and clinic updates from Dr. Konica Chhajed and the Oracle Dental Care team in Navsari."
+        description="Dental health tips, myth-busting, and clinic updates from Dr. Konika Chhajed Zaveri and the Oracle Dental Care team in Navsari."
         path="/blog"
       />
       <PageHero
