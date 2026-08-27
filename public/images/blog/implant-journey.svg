@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">The dental implant journey in four stages</title>
+  <desc id="desc">Stage 1: digital assessment and planning. Stage 2: implant placement, one appointment. Stage 3: healing and integration over three to six months. Stage 4: the final ceramic crown is fitted.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D53A5"/>
+      <stop offset="55%" stop-color="#1671C4"/>
+      <stop offset="100%" stop-color="#00ADEF"/>
+    </linearGradient>
+    <!-- userSpaceOnUse: a horizontal line has a zero-height bounding box, which
+         makes the default objectBoundingBox gradient degenerate and invisible. -->
+    <linearGradient id="line" gradientUnits="userSpaceOnUse" x1="150" y1="300" x2="1050" y2="300">
+      <stop offset="0%" stop-color="#AFD0F1"/>
+      <stop offset="50%" stop-color="#00ADEF"/>
+      <stop offset="100%" stop-color="#AFD0F1"/>
+    </linearGradient>
+    <style>
+      .h  { font: 700 42px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#fff; }
+      .sub{ font: 400 20px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#D6E7F8; }
+      .st { font: 700 22px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#0F1E2E; }
+      .bd { font: 400 16px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#516179; }
+      .num{ font: 800 26px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#fff; }
+      .tag{ font: 600 14px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#00739E; }
+      .brand { font: 600 15px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#A3B1C2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#F6FAFD"/>
+  <rect width="1200" height="196" fill="url(#bg)"/>
+
+  <text class="h" x="60" y="86">The Dental Implant Journey</text>
+  <text class="sub" x="60" y="128">What actually happens, from first scan to final tooth</text>
+  <text class="sub" x="60" y="162" style="font-size:16px; fill:#AFD0F1;">Oracle Dental Care · Navsari</text>
+
+  <!-- connecting line -->
+  <line x1="150" y1="300" x2="1050" y2="300" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- STEP 1 -->
+  <circle cx="150" cy="300" r="34" fill="#fff" stroke="#D6E7F8" stroke-width="3"/>
+  <circle cx="172" cy="278" r="15" fill="#00ADEF"/>
+  <text class="num" x="172" y="287" text-anchor="middle" style="font-size:17px;">1</text>
+  <g stroke="#0D53A5" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M136 292h28M136 300h28M136 308h20"/>
+  </g>
+  <text class="tag" x="150" y="368" text-anchor="middle">DAY 1</text>
+  <text class="st" x="150" y="400" text-anchor="middle">Assessment</text>
+  <text class="bd" x="150" y="432" text-anchor="middle">A digital X-ray maps</text>
+  <text class="bd" x="150" y="454" text-anchor="middle">your bone and nerves</text>
+  <text class="bd" x="150" y="476" text-anchor="middle">to plan the exact</text>
+  <text class="bd" x="150" y="498" text-anchor="middle">implant position.</text>
+
+  <!-- STEP 2 -->
+  <circle cx="450" cy="300" r="34" fill="#fff" stroke="#D6E7F8" stroke-width="3"/>
+  <circle cx="472" cy="278" r="15" fill="#00ADEF"/>
+  <text class="num" x="472" y="287" text-anchor="middle" style="font-size:17px;">2</text>
+  <g fill="#0D53A5">
+    <path d="M450 286 l10 8 v14 l-10 10 -10 -10 v-14 z"/>
+  </g>
+  <text class="tag" x="450" y="368" text-anchor="middle">ONE APPOINTMENT</text>
+  <text class="st" x="450" y="400" text-anchor="middle">Placement</text>
+  <text class="bd" x="450" y="432" text-anchor="middle">The titanium post is</text>
+  <text class="bd" x="450" y="454" text-anchor="middle">placed under local</text>
+  <text class="bd" x="450" y="476" text-anchor="middle">anaesthetic. Most</text>
+  <text class="bd" x="450" y="498" text-anchor="middle">patients feel pressure,</text>
+  <text class="bd" x="450" y="520" text-anchor="middle">not pain.</text>
+
+  <!-- STEP 3 -->
+  <circle cx="750" cy="300" r="34" fill="#fff" stroke="#D6E7F8" stroke-width="3"/>
+  <circle cx="772" cy="278" r="15" fill="#00ADEF"/>
+  <text class="num" x="772" y="287" text-anchor="middle" style="font-size:17px;">3</text>
+  <g stroke="#0D53A5" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <circle cx="750" cy="300" r="13"/>
+    <path d="M750 293v8l6 4"/>
+  </g>
+  <text class="tag" x="750" y="368" text-anchor="middle">3–6 MONTHS</text>
+  <text class="st" x="750" y="400" text-anchor="middle">Integration</text>
+  <text class="bd" x="750" y="432" text-anchor="middle">Bone fuses to the</text>
+  <text class="bd" x="750" y="454" text-anchor="middle">implant, making it a</text>
+  <text class="bd" x="750" y="476" text-anchor="middle">permanent root. You</text>
+  <text class="bd" x="750" y="498" text-anchor="middle">carry on normally.</text>
+
+  <!-- STEP 4 -->
+  <circle cx="1050" cy="300" r="34" fill="#fff" stroke="#D6E7F8" stroke-width="3"/>
+  <circle cx="1072" cy="278" r="15" fill="#00ADEF"/>
+  <text class="num" x="1072" y="287" text-anchor="middle" style="font-size:17px;">4</text>
+  <g fill="#0D53A5">
+    <path d="M1036 308 l4 -18 8 8 6 -12 6 12 8 -8 4 18 z"/>
+  </g>
+  <text class="tag" x="1050" y="368" text-anchor="middle">FINAL VISIT</text>
+  <text class="st" x="1050" y="400" text-anchor="middle">Your New Tooth</text>
+  <text class="bd" x="1050" y="432" text-anchor="middle">A custom ceramic</text>
+  <text class="bd" x="1050" y="454" text-anchor="middle">crown is fitted, shade-</text>
+  <text class="bd" x="1050" y="476" text-anchor="middle">matched to your own</text>
+  <text class="bd" x="1050" y="498" text-anchor="middle">teeth.</text>
+
+  <!-- footer note -->
+  <rect x="60" y="562" width="1080" height="76" rx="14" fill="#EEF5FC" stroke="#D6E7F8"/>
+  <text class="bd" x="600" y="594" text-anchor="middle" style="font-size:17px; fill:#0A4183;">Timelines vary per patient — bone quality and healing speed change the schedule.</text>
+  <text class="bd" x="600" y="620" text-anchor="middle" style="font-size:17px; fill:#0A4183;">You get a personalised plan at your consultation.</text>
+
+  <text class="brand" x="1140" y="656" text-anchor="end">oracledental.in</text>
+</svg>

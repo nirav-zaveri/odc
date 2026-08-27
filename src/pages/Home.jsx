@@ -7,7 +7,7 @@ import {
   Award,
   Users,
   Sparkles,
-  Stethoscope,
+  Anchor,
   HeartHandshake,
   ArrowRight,
 } from 'lucide-react'
@@ -21,8 +21,9 @@ import FaqAccordion from '../components/FaqAccordion'
 import StatCounter from '../components/StatCounter'
 import SmartImage from '../components/SmartImage'
 import ToothMark from '../components/ToothMark'
-import { clinic, doctor, services, stats, testimonials, faqs } from '../data/site'
-import { photos, avatars } from '../data/images'
+import ImplantHighlight from '../components/ImplantHighlight'
+import { clinic, doctor, services, stats, testimonials, featuredTestimonials, faqs } from '../data/site'
+import { photos } from '../data/images'
 import { getAllPosts } from '../utils/blog'
 
 const trustBadges = [
@@ -31,24 +32,32 @@ const trustBadges = [
   { icon: Users, label: '5000+ Happy Patients' },
 ]
 
+// These four are drawn from what patients actually praise most often in the
+// clinic's Google reviews — not generic clinic marketing claims.
 const whyChooseUs = [
   {
-    icon: Sparkles,
-    title: 'Advanced Technology',
-    description:
-      'Digital X-rays, rotary endodontics, and modern sterilization protocols for precise, comfortable treatment.',
-  },
-  {
     icon: HeartHandshake,
-    title: 'Gentle, Personal Care',
+    title: 'Genuinely Painless',
     description:
-      'Every treatment plan is built around you — your comfort, your questions, and your pace, never rushed.',
+      'The thing our patients mention most: treatment that was far more comfortable than they expected — extractions, root canals, and implants included.',
   },
   {
-    icon: Stethoscope,
-    title: 'Multi-Speciality Expertise',
+    icon: ShieldCheck,
+    title: 'Honest Advice',
     description:
-      'From routine cleanings to full mouth rehabilitation, one trusted clinic covers your whole family’s needs.',
+      'We recommend what you actually need, and explain why. No unnecessary treatments, no pressure — just a clear plan and fair pricing.',
+  },
+  {
+    icon: Anchor,
+    title: 'Implant Expertise',
+    description:
+      'A dedicated implant and full-mouth rehabilitation focus, with digital planning for predictable, natural-feeling results.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Modern & Spotless',
+    description:
+      'Digital X-rays, rotary endodontics, and strict single-use sterilization protocols in a calm, immaculately clean clinic.',
   },
 ]
 
@@ -88,7 +97,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white ring-1 ring-inset ring-white/20 backdrop-blur-sm sm:text-sm"
             >
-              <Sparkles className="h-3.5 w-3.5" /> {clinic.tagline} · Navsari
+              <Sparkles className="h-3.5 w-3.5" /> {clinic.taglineLong} · Navsari
             </motion.span>
 
             <motion.h1
@@ -190,6 +199,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------------------------------------------------------- IMPLANT CENTRE */}
+      <ImplantHighlight />
+
       {/* ---------------------------------------------------------------- WHY CHOOSE US + STATS */}
       <section className="relative overflow-hidden bg-primary-950 py-20 text-white sm:py-28">
         <div className="absolute inset-0 bg-brand-radial opacity-60" />
@@ -254,19 +266,22 @@ export default function Home() {
       <section className="bg-surface py-20 sm:py-28">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Patient Stories"
+            eyebrow="Patient Reviews"
             title="What our patients say"
-            description="Real experiences from families across Navsari."
+            description="Real, verified five-star reviews from families across Navsari — and from patients who travelled a lot further."
           />
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <TestimonialCard
-                key={t.name}
-                testimonial={t}
-                avatar={Object.values(avatars)[i % Object.values(avatars).length]}
-              />
+          <div className="mt-14 columns-1 gap-6 md:columns-2 lg:columns-3 [&>*]:mb-6">
+            {featuredTestimonials.map((t, i) => (
+              <div key={t.name} className="break-inside-avoid">
+                <TestimonialCard testimonial={t} index={i} />
+              </div>
             ))}
           </div>
+          <Reveal className="mt-8 text-center">
+            <Link to="/testimonials" className="btn-outline">
+              Read all {testimonials.length} reviews <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 

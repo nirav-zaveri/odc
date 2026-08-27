@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t d">
+  <title id="t">Braces versus clear aligners compared</title>
+  <desc id="d">A side-by-side comparison of fixed braces and clear aligners across visibility, treatment time, removability, cleaning, suitability for complex cases, and typical cost.</desc>
+
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D53A5"/>
+      <stop offset="55%" stop-color="#1671C4"/>
+      <stop offset="100%" stop-color="#00ADEF"/>
+    </linearGradient>
+    <style>
+      .h   { font: 700 42px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#fff; }
+      .sub { font: 400 20px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#D6E7F8; }
+      .brandsm { font: 600 16px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#AFD0F1; }
+      .colh{ font: 700 24px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .rowl{ font: 600 17px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#0F1E2E; }
+      .cell{ font: 400 17px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#3D4A5F; }
+      .note{ font: 400 17px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#0A4183; }
+      .brand { font: 600 15px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#A3B1C2; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="#F6FAFD"/>
+  <rect width="1200" height="180" fill="url(#hdr)"/>
+  <text class="h" x="60" y="82">Braces vs Clear Aligners</text>
+  <text class="sub" x="60" y="122">Which one is right for you?</text>
+  <text class="brandsm" x="60" y="154">Oracle Dental Care · Navsari</text>
+
+  <!-- column headers -->
+  <rect x="440" y="212" width="340" height="62" rx="12" fill="#0D53A5"/>
+  <text class="colh" x="610" y="252" text-anchor="middle" fill="#fff">Fixed Braces</text>
+
+  <rect x="800" y="212" width="340" height="62" rx="12" fill="#00ADEF"/>
+  <text class="colh" x="970" y="252" text-anchor="middle" fill="#fff">Clear Aligners</text>
+
+  <!-- rows -->
+  <g>
+    <!-- row 1 -->
+    <rect x="60" y="292" width="1080" height="86" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="rowl" x="86" y="330">Visibility</text>
+    <text class="cell" x="86" y="356" style="font-size:14px; fill:#71839A;">How noticeable is it?</text>
+    <text class="cell" x="610" y="343" text-anchor="middle">Visible metal or ceramic</text>
+    <text class="cell" x="970" y="343" text-anchor="middle" style="font-weight:600; fill:#00739E;">Virtually invisible</text>
+
+    <!-- row 2 -->
+    <rect x="60" y="388" width="1080" height="86" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="rowl" x="86" y="426">Treatment time</text>
+    <text class="cell" x="86" y="452" style="font-size:14px; fill:#71839A;">Typical range</text>
+    <text class="cell" x="610" y="439" text-anchor="middle">12–24 months</text>
+    <text class="cell" x="970" y="439" text-anchor="middle">6–18 months</text>
+
+    <!-- row 3 -->
+    <rect x="60" y="484" width="1080" height="86" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="rowl" x="86" y="522">Removable?</text>
+    <text class="cell" x="86" y="548" style="font-size:14px; fill:#71839A;">For meals and photos</text>
+    <text class="cell" x="610" y="535" text-anchor="middle">No — fixed until the end</text>
+    <text class="cell" x="970" y="535" text-anchor="middle" style="font-weight:600; fill:#00739E;">Yes — take them out</text>
+
+    <!-- row 4 -->
+    <rect x="60" y="580" width="1080" height="86" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="rowl" x="86" y="618">Complex corrections</text>
+    <text class="cell" x="86" y="644" style="font-size:14px; fill:#71839A;">Severe crowding or bite issues</text>
+    <text class="cell" x="610" y="631" text-anchor="middle" style="font-weight:600; fill:#0A4183;">Best choice</text>
+    <text class="cell" x="970" y="631" text-anchor="middle">Sometimes limited</text>
+
+    <!-- row 5 -->
+    <rect x="60" y="676" width="1080" height="86" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="rowl" x="86" y="714">Discipline needed</text>
+    <text class="cell" x="86" y="740" style="font-size:14px; fill:#71839A;">Does it depend on you?</text>
+    <text class="cell" x="610" y="727" text-anchor="middle" style="font-weight:600; fill:#0A4183;">Low — always working</text>
+    <text class="cell" x="970" y="727" text-anchor="middle">High — 20–22 hrs/day</text>
+  </g>
+
+  <!-- bottom note -->
+  <rect x="60" y="782" width="1080" height="72" rx="14" fill="#EEF5FC" stroke="#D6E7F8"/>
+  <text class="note" x="600" y="814" text-anchor="middle">Neither option is universally &#8220;better&#8221; — the right answer depends on your teeth, your bite, and your routine.</text>
+  <text class="note" x="600" y="840" text-anchor="middle">A single consultation is usually enough to tell you which will work for you.</text>
+
+  <text class="brand" x="1140" y="882" text-anchor="end">oracledental.in</text>
+</svg>

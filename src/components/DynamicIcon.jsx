@@ -8,6 +8,7 @@ import {
   Scissors,
   HeartPulse,
   Layers,
+  Smile,
   HelpCircle,
 } from 'lucide-react'
 
@@ -24,6 +25,7 @@ const registry = {
   Scissors,
   HeartPulse,
   Layers,
+  Smile,
 }
 
 // Renders a lucide-react icon by its string name (as stored in site data),

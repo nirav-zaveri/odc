@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 830" width="1200" height="830" role="img" aria-labelledby="t d">
+  <title id="t">What each common dental treatment actually feels like</title>
+  <desc id="d">Comfort expectations for scaling, a filling, a root canal, an extraction and an implant placement, covering what is felt during treatment and typical recovery.</desc>
+
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D53A5"/>
+      <stop offset="55%" stop-color="#1671C4"/>
+      <stop offset="100%" stop-color="#00ADEF"/>
+    </linearGradient>
+    <style>
+      .h    { font: 700 40px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#fff; }
+      .sub  { font: 400 20px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#D6E7F8; }
+      .brandsm { font: 600 16px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#AFD0F1; }
+      .proc { font: 700 20px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#0F1E2E; }
+      .sublbl { font: 400 14px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#71839A; }
+      .lbl  { font: 600 13px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#71839A; letter-spacing:0.06em; }
+      .val  { font: 400 15px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#3D4A5F; }
+      .meter{ font: 600 13px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#187E55; }
+      .note { font: 400 16px Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill:#0A4183; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="830" fill="#F6FAFD"/>
+  <rect width="1200" height="176" fill="url(#hdr)"/>
+  <text class="h" x="60" y="80">&#8220;Will it hurt?&#8221;</text>
+  <text class="sub" x="60" y="120">An honest guide to what each treatment actually feels like</text>
+  <text class="brandsm" x="60" y="152">Oracle Dental Care · Navsari</text>
+
+  <text class="lbl" x="86" y="222">TREATMENT</text>
+  <text class="lbl" x="400" y="222">DURING TREATMENT</text>
+  <text class="lbl" x="720" y="222">AFTERWARDS</text>
+  <text class="lbl" x="1030" y="222" text-anchor="middle">COMFORT</text>
+
+    <rect x="60" y="238" width="1080" height="96" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="proc" x="86" y="280">Scaling &amp; polishing</text>
+    <text class="sublbl" x="86" y="308">No anaesthetic needed</text>
+    <text class="val" x="400" y="284">Vibration and cool water.</text>
+    <text class="val" x="400" y="306">Mild sensitivity if gums are sore.</text>
+    <text class="val" x="720" y="284">Teeth feel smooth —</text>
+    <text class="val" x="720" y="306">nothing to recover from.</text>
+    <g><circle cx="990" cy="280" r="7" fill="#1F9D6B"/><circle cx="1010" cy="280" r="7" fill="#1F9D6B"/><circle cx="1030" cy="280" r="7" fill="#1F9D6B"/><circle cx="1050" cy="280" r="7" fill="#1F9D6B"/><circle cx="1070" cy="280" r="7" fill="#1F9D6B"/></g>
+    <text class="meter" x="1030" y="310" text-anchor="middle">Very easy</text>
+    <rect x="60" y="344" width="1080" height="96" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="proc" x="86" y="386">Tooth filling</text>
+    <text class="sublbl" x="86" y="414">Local anaesthetic</text>
+    <text class="val" x="400" y="390">Numbness and pressure only.</text>
+    <text class="val" x="400" y="412">You should feel no pain.</text>
+    <text class="val" x="720" y="390">Numbness fades in 1–2 hrs.</text>
+    <text class="val" x="720" y="412">Eat normally same day.</text>
+    <g><circle cx="990" cy="386" r="7" fill="#1F9D6B"/><circle cx="1010" cy="386" r="7" fill="#1F9D6B"/><circle cx="1030" cy="386" r="7" fill="#1F9D6B"/><circle cx="1050" cy="386" r="7" fill="#1F9D6B"/><circle cx="1070" cy="386" r="7" fill="#CBD4DF"/></g>
+    <text class="meter" x="1030" y="416" text-anchor="middle">Easy</text>
+    <rect x="60" y="450" width="1080" height="96" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="proc" x="86" y="492">Root canal (RCT)</text>
+    <text class="sublbl" x="86" y="520">Local anaesthetic</text>
+    <text class="val" x="400" y="496">Usually less than the toothache</text>
+    <text class="val" x="400" y="518">that brought you in.</text>
+    <text class="val" x="720" y="496">Mild tenderness 2–3 days.</text>
+    <text class="val" x="720" y="518">Painkillers if needed.</text>
+    <g><circle cx="990" cy="492" r="7" fill="#1F9D6B"/><circle cx="1010" cy="492" r="7" fill="#1F9D6B"/><circle cx="1030" cy="492" r="7" fill="#1F9D6B"/><circle cx="1050" cy="492" r="7" fill="#CBD4DF"/><circle cx="1070" cy="492" r="7" fill="#CBD4DF"/></g>
+    <text class="meter" x="1030" y="522" text-anchor="middle">Comfortable</text>
+    <rect x="60" y="556" width="1080" height="96" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="proc" x="86" y="598">Tooth extraction</text>
+    <text class="sublbl" x="86" y="626">Local anaesthetic</text>
+    <text class="val" x="400" y="602">Firm pressure and movement.</text>
+    <text class="val" x="400" y="624">Often over faster than expected.</text>
+    <text class="val" x="720" y="602">Swelling 2–3 days.</text>
+    <text class="val" x="720" y="624">Soft food, no straws.</text>
+    <g><circle cx="990" cy="598" r="7" fill="#1F9D6B"/><circle cx="1010" cy="598" r="7" fill="#1F9D6B"/><circle cx="1030" cy="598" r="7" fill="#1F9D6B"/><circle cx="1050" cy="598" r="7" fill="#CBD4DF"/><circle cx="1070" cy="598" r="7" fill="#CBD4DF"/></g>
+    <text class="meter" x="1030" y="628" text-anchor="middle">Comfortable</text>
+    <rect x="60" y="662" width="1080" height="96" rx="12" fill="#fff" stroke="#E8ECF1"/>
+    <text class="proc" x="86" y="704">Implant placement</text>
+    <text class="sublbl" x="86" y="732">Local anaesthetic</text>
+    <text class="val" x="400" y="708">Pressure and vibration. Most</text>
+    <text class="val" x="400" y="730">patients say it surprised them.</text>
+    <text class="val" x="720" y="708">Mild soreness for a week.</text>
+    <text class="val" x="720" y="730">Back to work next day.</text>
+    <g><circle cx="990" cy="704" r="7" fill="#1F9D6B"/><circle cx="1010" cy="704" r="7" fill="#1F9D6B"/><circle cx="1030" cy="704" r="7" fill="#1F9D6B"/><circle cx="1050" cy="704" r="7" fill="#CBD4DF"/><circle cx="1070" cy="704" r="7" fill="#CBD4DF"/></g>
+    <text class="meter" x="1030" y="734" text-anchor="middle">Comfortable</text>
+
+  <rect x="60" y="774" width="1080" height="36" rx="10" fill="#EEF5FC" stroke="#D6E7F8"/>
+  <text class="note" x="600" y="798" text-anchor="middle">Tell us if you are anxious — we go slower, explain each step first, and stop whenever you raise your hand.</text>
+</svg>

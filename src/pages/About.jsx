@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import SmartImage from '../components/SmartImage'
-import { clinic, doctor, team } from '../data/site'
+import { clinic, doctor } from '../data/site'
 import { photos } from '../data/images'
 
 const values = [
@@ -102,27 +102,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 sm:py-24">
-        <div className="container-page">
-          <SectionHeading eyebrow="Our Team" title="The people behind your care" />
-          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member, i) => (
-              <Reveal key={member.name} delay={i * 0.08} className="card overflow-hidden text-center">
-                <SmartImage
-                  photo={{ ...photos.teamMember, alt: member.name }}
-                  className="aspect-square w-full object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="font-display font-bold text-ink-900">{member.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-primary-700">{member.role}</p>
-                  <p className="mt-1 text-xs text-ink-400">{member.credentials}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* NOTE: A "Our Team" section was removed deliberately — the clinic is
+          currently a single-dentist practice, and a lone team card looks worse
+          than no section at all. Re-add when there are associates to feature;
+          the `team` array in src/data/site.js is still there and ready. */}
 
       {/* Gallery */}
       <section className="bg-surface py-20 sm:py-24">
