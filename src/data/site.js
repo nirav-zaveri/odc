@@ -42,7 +42,22 @@ export const clinic = {
     instagram: 'https://www.instagram.com/oracle_dental_care/',
     facebook: 'https://www.facebook.com/drkonika.zaveri',
   },
-  founded: 2011, // PLACEHOLDER — confirm year clinic opened, used for "X years" stat
+  foundedDate: '2022-10-05', // the clinic opened on 5 October 2022
+}
+
+/**
+ * Completed years since the clinic opened. Computed from the real founding
+ * date rather than hard-coded, so the "X+ years" figure can never drift out
+ * of date or overstate itself.
+ */
+export function yearsServing(now = new Date()) {
+  const start = new Date(clinic.foundedDate)
+  let years = now.getFullYear() - start.getFullYear()
+  const beforeAnniversary =
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate())
+  if (beforeAnniversary) years -= 1
+  return Math.max(years, 0)
 }
 
 export const doctor = {
@@ -163,13 +178,14 @@ export const services = [
   },
 ]
 
+// Every figure here is verifiable: years is computed from the real founding
+// date, reviews are countable on the Google listing, and specialities are
+// counted from the services list above. Deliberately no "N happy patients"
+// claim — the clinic has not confirmed a number it can stand behind.
 export const stats = [
-  // NOTE: the first two are PLACEHOLDER — confirm with the clinic before launch.
-  // The last two are counted from real site data, so they stay accurate.
-  { label: 'Years serving Navsari', value: 13, suffix: '+' },
-  { label: 'Happy patients treated', value: 5000, suffix: '+' },
-  { label: 'Five-star Google reviews', value: 40, suffix: '' },
-  { label: 'Dental specialities', value: 10, suffix: '' },
+  { label: 'Years serving Navsari', value: yearsServing(), suffix: '+' },
+  { label: 'Five-star Google reviews', value: 40, suffix: '+' },
+  { label: 'Dental specialities', value: services.length, suffix: '' },
 ]
 
 // ---------------------------------------------------------------------------

@@ -31,7 +31,7 @@ export default function Testimonials() {
       <PageHero
         eyebrow="Patient Reviews"
         title="What our patients actually say"
-        description={`Every review below is a real, verified five-star review from our Google Business Profile — in our patients' own words.`}
+        description={`Every review below is a real, verified five-star review from our Google Business Profile — in our patients' own words. There are more on Google.`}
       />
 
       {/* Summary strip — every figure here is countable from the reviews below,
@@ -49,7 +49,7 @@ export default function Testimonials() {
             </Reveal>
             <Reveal delay={0.08}>
               <p className="font-display text-3xl font-extrabold text-ink-900">
-                {testimonials.length}
+                {testimonials.length}+
               </p>
               <p className="mt-2 text-sm text-ink-500">Five-star reviews</p>
             </Reveal>

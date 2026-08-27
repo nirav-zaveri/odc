@@ -32,11 +32,15 @@ export function parseFrontmatter(raw) {
 }
 
 function stripQuotes(value) {
-  if (
-    (value.startsWith('"') && value.endsWith('"')) ||
-    (value.startsWith("'") && value.endsWith("'"))
-  ) {
-    return value.slice(1, -1)
+  // Double-quoted: unescape \" and \\ so a title like
+  //   title: "\"Will It Hurt?\" — An Honest Answer"
+  // renders with real quote marks rather than literal backslashes.
+  if (value.length >= 2 && value.startsWith('"') && value.endsWith('"')) {
+    return value.slice(1, -1).replace(/\\(["\\])/g, '$1')
+  }
+  // Single-quoted: YAML escapes an apostrophe by doubling it ('' -> ').
+  if (value.length >= 2 && value.startsWith("'") && value.endsWith("'")) {
+    return value.slice(1, -1).replace(/''/g, "'")
   }
   return value
 }

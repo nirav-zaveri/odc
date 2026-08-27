@@ -5,7 +5,7 @@ import {
   Phone,
   ShieldCheck,
   Award,
-  Users,
+  Star,
   Sparkles,
   Anchor,
   HeartHandshake,
@@ -27,10 +27,15 @@ import { clinic, doctor, services, stats, testimonials, featuredTestimonials, fa
 import { photos } from '../data/images'
 import { getAllPosts } from '../utils/blog'
 
+// Only claims that can be independently verified: the council registration is
+// on the clinic's letterhead, the years figure derives from the real founding
+// date, and the review count is checkable on the Google listing.
 const trustBadges = [
   { icon: ShieldCheck, label: 'Gujarat Dental Council Registered' },
-  { icon: Award, label: `${new Date().getFullYear() - clinic.founded}+ Years Serving Navsari` },
-  { icon: Users, label: '5000+ Happy Patients' },
+  { icon: Award, label: `Serving Navsari since ${new Date(clinic.foundedDate).getFullYear()}` },
+  // "+" rather than an exact count: these are the reviews transcribed onto the
+  // site, and the clinic's Google listing has more.
+  { icon: Star, label: `${testimonials.length}+ Five-Star Google Reviews` },
 ]
 
 // These four are drawn from what patients actually praise most often in the
@@ -225,7 +230,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-20 grid grid-cols-2 gap-8 border-t border-white/10 pt-14 sm:grid-cols-4">
+          <div className="mt-20 grid grid-cols-1 gap-8 border-t border-white/10 pt-14 sm:grid-cols-3">
             {stats.map((stat) => (
               <StatCounter key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} />
             ))}
@@ -281,7 +286,7 @@ export default function Home() {
           </div>
           <Reveal className="mt-8 text-center">
             <Link to="/testimonials" className="btn-outline">
-              Read all {testimonials.length} reviews <ArrowRight className="h-4 w-4" />
+              Read more patient reviews <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
