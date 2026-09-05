@@ -230,7 +230,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-20 grid grid-cols-1 gap-8 border-t border-white/10 pt-14 sm:grid-cols-3">
+          <div className="mt-20 grid grid-cols-2 gap-8 border-t border-white/10 pt-14 sm:grid-cols-4">
             {stats.map((stat) => (
               <StatCounter key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} />
             ))}
@@ -266,7 +266,7 @@ export default function Home() {
               ))}
             </ul>
             <Link to="/about" className="btn-primary mt-8">
-              More About Dr. Chhajed <ArrowRight className="h-4 w-4" />
+              More About Dr. Konika <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
@@ -301,7 +301,7 @@ export default function Home() {
           <div className="container-page">
             <SectionHeading
               eyebrow="From the Blog"
-              title="Dental knowledge, straight from Dr. Chhajed"
+              title="Dental knowledge, straight from Dr. Konika"
               description="Tips, myth-busting, and updates from our clinic — to help you make confident decisions about your smile."
             />
             <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">

@@ -179,11 +179,11 @@ export const services = [
 ]
 
 // Every figure here is verifiable: years is computed from the real founding
-// date, reviews are countable on the Google listing, and specialities are
-// counted from the services list above. Deliberately no "N happy patients"
-// claim — the clinic has not confirmed a number it can stand behind.
+// date, the patient count was confirmed by the clinic, reviews are countable
+// on the Google listing, and specialities are counted from the services list.
 export const stats = [
   { label: 'Years serving Navsari', value: yearsServing(), suffix: '+' },
+  { label: 'Patients treated', value: 1100, suffix: '+' }, // confirmed by the clinic
   { label: 'Five-star Google reviews', value: 40, suffix: '+' },
   { label: 'Dental specialities', value: services.length, suffix: '' },
 ]

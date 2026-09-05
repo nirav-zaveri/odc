@@ -25,7 +25,7 @@ export default function Blog() {
       <PageHero
         eyebrow="The Oracle Journal"
         title="Dental knowledge worth reading"
-        description="Straightforward guidance from Dr. Chhajed — no jargon, no scare tactics, just what actually helps your smile."
+        description="Straightforward guidance from Dr. Konika — no jargon, no scare tactics, just what actually helps your smile."
       />
 
       <section className="py-20 sm:py-24">

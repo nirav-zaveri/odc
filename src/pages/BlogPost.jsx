@@ -68,7 +68,7 @@ export default function BlogPost() {
           <Reveal className="mt-12 rounded-2xl bg-primary-50 p-6 sm:p-8">
             <p className="font-display font-bold text-ink-900">Have a question about this?</p>
             <p className="mt-1 text-sm text-ink-500">
-              Message us on WhatsApp — Dr. Chhajed's team is happy to help.
+              Message us on WhatsApp — Dr. Konika's team is happy to help.
             </p>
             <a
               href={`https://wa.me/${clinic.whatsapp}`}

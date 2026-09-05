@@ -1,7 +1,7 @@
 # Oracle Dental Care — Website
 
 The official website for **Oracle Dental Care**, a multi-speciality dental clinic in Navsari,
-Gujarat, led by Dr. Konica Chhajed. Built as a modern React site with a built-in blog the doctor
+Gujarat, led by Dr. Konika Chhajed Zaveri. Built as a modern React site with a built-in blog the doctor
 can update herself — no code required.
 
 > **Note on content:** most of the text on this site (working hours, team bios, testimonials,
@@ -86,7 +86,7 @@ date: "2026-08-27"
 excerpt: "A one-sentence summary shown on the blog list page."
 cover: "https://images.unsplash.com/photo-xxxxxxx?w=1600&h=900&auto=format&fit=crop"
 tags: ["Patient Guide"]
-author: "Dr. Konica Chhajed"
+author: "Dr. Konika Chhajed Zaveri"
 draft: false
 ---
 
@@ -207,7 +207,7 @@ the clinic before launch (all are marked `PLACEHOLDER` in `src/data/site.js`):
 
 - Working hours
 - Year the clinic was founded (used for the "X+ years" stat)
-- Team members beyond Dr. Chhajed
+- Team members beyond Dr. Konika
 - Patient testimonials (currently illustrative, not real reviews)
 - All photos (currently stock photography — see the "Do you have real photos" note in project
   history; swap via `src/data/images.js` any time)

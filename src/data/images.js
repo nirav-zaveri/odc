@@ -29,7 +29,7 @@ export const photos = {
     fallback: pexels('4173251', 1400, 1000),
     alt: 'Welcoming dental clinic reception area',
   },
-  // The clinic's own photograph of Dr. Chhajed Zaveri. Native size is modest
+  // The clinic's own photograph of Dr. Konika Chhajed Zaveri. Native size is modest
   // (380x475), so it is displayed in a contained portrait card rather than a
   // full-bleed image, which keeps it sharp. If a higher-resolution original
   // becomes available, replace src/assets/doctor.jpg and nothing else changes.

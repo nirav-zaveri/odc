@@ -1,26 +1,15 @@
 ---
-title: "Why We Switched to Digital X-Rays — A Note From Dr. Konika Chhajed Zaveri"
-slug: "why-we-switched-to-digital-xrays"
+title: "Why We Use Digital X-Rays — A Note From Dr. Konika"
+slug: "why-we-use-digital-xrays"
 date: "2026-03-10"
-excerpt: "A behind-the-scenes look at why we invested in digital radiography, and what it actually changes for you as a patient."
+excerpt: "A behind-the-scenes look at digital radiography at our clinic, and what it actually changes for you as a patient."
 cover: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=1600&h=900&auto=format&fit=crop&ixlib=rb-4.0.3"
 tags: ["Clinic Update", "Technology"]
 author: "Dr. Konika Chhajed Zaveri"
-draft: true
+draft: false
 ---
 
-<!--
-  HELD AS DRAFT ON PURPOSE. Unlike the other posts (which are general dental
-  education), this one is written as a first-person announcement from Dr. Chhajed
-  about a specific equipment investment at this clinic. That claim was drafted
-  speculatively and has NOT been confirmed by the clinic.
-
-  Before publishing: confirm the clinic actually uses digital radiography, and
-  have Dr. Chhajed review the wording as her own. Then set draft: false.
--->
-
-
-I want to share something we're genuinely excited about at Oracle Dental Care: our move to fully digital X-rays. It's the kind of upgrade that happens behind the scenes, so I wanted to explain why it mattered enough to us to invest in.
+There's something at Oracle Dental Care that most patients never think about, but which quietly shapes almost every visit: we use fully digital X-rays. It's the kind of thing that happens behind the scenes, so I wanted to explain why it matters.
 
 ## Less radiation, not more
 
