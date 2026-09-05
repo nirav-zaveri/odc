@@ -47,7 +47,7 @@ src/
   content/blog/          ← blog posts, as Markdown files with frontmatter
   data/
     site.js             ← ⭐ ALL clinic content lives here: address, phone, services, team, FAQs…
-    images.js            ← stock photo placeholders (swap for real photos any time)
+    images.js            ← every photo on the site, in one place (real + stock stand-ins)
   pages/                ← one file per route (Home, Services, About, Contact, Blog, BlogPost)
   utils/
     blog.js             ← loads & parses every file in src/content/blog automatically
@@ -63,7 +63,7 @@ updates. Every field that's still placeholder/mock data is commented `// PLACEHO
 Photos are similarly centralized in **`src/data/images.js`**. To replace a placeholder stock photo
 with a real one:
 
-1. Drop the image file in `src/assets/` (e.g. `src/assets/doctor.jpg`).
+1. Drop the image file in `src/assets/` (e.g. `src/assets/clinic-hero.jpg`).
 2. In `src/data/images.js`, import it and point the relevant entry's `src` at it.
 
 ## The blog
@@ -215,8 +215,13 @@ Google Fonts.
 
 The clinic's factual details in `src/data/site.js` are confirmed and real. Two things are not:
 
-- **Photography.** Dr. Konika's portrait is the clinic's own. Every other photo is licensed stock
-  imagery standing in for the real premises — see [Adding images](#adding-images) to swap them.
+- **Photography.** Three images are the clinic's own — the Home hero, Dr. Konika's portrait, and
+  the first tile of the About gallery. The remaining five are licensed stock imagery standing in
+  for the real premises: the other three About gallery tiles, and the photo beside the Implant
+  Centre section on the Home page. Real photos of the reception, the surgery, and a consultation
+  in progress would replace all of them — see [Adding images](#adding-images).
+  The uncropped originals live in `public/images/uploads/`, so a different crop can be cut from
+  them at any time without asking the clinic for the files again.
 - **The blog posts.** They are original writing produced for this project, not articles the clinic
   has published. They are accurate and on-brand, but they are ours, not hers — worth a read-through
   and an edit pass in the doctor's own voice.

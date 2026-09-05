@@ -1,11 +1,17 @@
 // ---------------------------------------------------------------------------
-// IMAGERY. `doctorPortrait` is the clinic's own photograph. Everything else is
-// still stock placeholder imagery pending real clinic photos (interior, team,
-// patients) — swap any entry here for a real one with no changes elsewhere:
-// drop the file in src/assets/, import it, and set it as `src`.
+// IMAGERY. Three of these are the clinic's own photographs — `heroClinic`,
+// `doctorPortrait` and `doctorInClinic`, cropped from originals kept in
+// public/images/uploads/ so a different crop can be cut later without asking
+// for the photos again. The rest is still stock imagery standing in for the
+// real premises. To swap any entry for a real one, with no changes anywhere
+// else: drop the file in src/assets/, import it, and set it as `src`. Local
+// imports need no `fallback` — they cannot fail to load the way a hotlinked
+// stock URL can.
 // ---------------------------------------------------------------------------
 
-import doctorPortraitImg from '../assets/doctor.jpg'
+import doctorPortraitImg from '../assets/dr-konika-portrait.jpg'
+import clinicHeroImg from '../assets/clinic-hero.jpg'
+import doctorInClinicImg from '../assets/clinic-treatment-room.jpg'
 
 const unsplash = (id, w, h) =>
   `https://images.unsplash.com/photo-${id}?q=80&w=${w}&h=${h}&auto=format&fit=crop&ixlib=rb-4.0.3`
@@ -14,10 +20,13 @@ const pexels = (id, w, h) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&h=${h}&dpr=2`
 
 export const photos = {
+  // The hero image, and the first thing anyone sees: Dr. Konika in the clinic's
+  // own treatment room. Cropped to exactly 5:6 so it fills the hero frame
+  // uncropped at `sm:aspect-[5/6]`, and crops only left-to-right at the 4:5
+  // mobile aspect — never top-to-bottom, which would cut her head or feet.
   heroClinic: {
-    src: unsplash('1629909613654-28e377c37b09', 2400, 1600),
-    fallback: pexels('3845810', 2400, 1600),
-    alt: 'Modern, bright dental clinic interior',
+    src: clinicHeroImg,
+    alt: 'Dr. Konika Chhajed Zaveri in the treatment room at Oracle Dental Care, Navsari',
   },
   clinicConsult: {
     src: unsplash('1582750433449-648ed127bb54', 1400, 1000),
@@ -29,13 +38,20 @@ export const photos = {
     fallback: pexels('4173251', 1400, 1000),
     alt: 'Welcoming dental clinic reception area',
   },
-  // The clinic's own photograph of Dr. Konika Chhajed Zaveri. Native size is modest
-  // (380x475), so it is displayed in a contained portrait card rather than a
-  // full-bleed image, which keeps it sharp. If a higher-resolution original
-  // becomes available, replace src/assets/doctor.jpg and nothing else changes.
+  // Dr. Konika at her consultation desk. Square rather than the usual 4:5,
+  // because the source is a landscape frame: cropping square keeps 750px of
+  // real detail where a 4:5 crop would have kept 600 and filled a third of the
+  // frame with empty desk. The cards that use it set no aspect ratio, so the
+  // shape here is the shape on the page.
   doctorPortrait: {
     src: doctorPortraitImg,
     alt: 'Dr. Konika Chhajed Zaveri, BDS — Founder & Chief Dental Surgeon, Oracle Dental Care',
+  },
+  // Leads the "Inside Oracle Dental Care" gallery on the About page. Square to
+  // match the tile, framed to keep the dental chair and delivery unit in shot.
+  doctorInClinic: {
+    src: doctorInClinicImg,
+    alt: 'Dr. Konika Chhajed Zaveri beside the dental chair in the treatment room at Oracle Dental Care',
   },
   teamMember: {
     src: unsplash('1612349317150-e413f6a5b16d', 700, 700),

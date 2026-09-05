@@ -242,7 +242,7 @@ export default function Home() {
       <section className="py-20 sm:py-28">
         <div className="container-page grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <Reveal direction="right" className="relative mx-auto w-full max-w-sm">
-            {/* Shown near native resolution on a tinted panel — see About.jsx */}
+            {/* Same portrait card as the About page — the photo sets its own aspect. */}
             <div className="overflow-hidden rounded-[2rem] bg-gradient-to-b from-primary-50 to-secondary-50 p-3 shadow-soft-lg">
               <SmartImage
                 photo={photos.doctorPortrait}

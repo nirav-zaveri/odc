@@ -48,9 +48,9 @@ export default function About() {
       <section className="py-20 sm:py-24">
         <div className="container-page grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <Reveal direction="right" className="lg:sticky lg:top-28">
-            {/* Contained portrait card: the source photograph is modest
-                resolution, so it is shown at close to its native size on a
-                brand-tinted panel instead of being blown up full-bleed. */}
+            {/* Contained portrait card on a brand-tinted panel. The photo sets
+                its own aspect ratio (see doctorPortrait in src/data/images.js),
+                so this stays correct if a differently-shaped one replaces it. */}
             <div className="mx-auto max-w-sm overflow-hidden rounded-[2rem] bg-gradient-to-b from-primary-50 to-secondary-50 p-3 shadow-soft-lg">
               <SmartImage
                 photo={photos.doctorPortrait}
@@ -123,7 +123,10 @@ export default function About() {
         <div className="container-page">
           <SectionHeading eyebrow="Inside Oracle Dental Care" title="A calm, modern clinic environment" />
           <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[photos.clinicReception, photos.treatmentRoom, photos.dentalChair, photos.clinicConsult].map(
+            {/* The clinic's own photo leads; the other three are still stock
+                standing in for the real premises — replace them as real photos
+                of the reception, surgery and consultation come in. */}
+            {[photos.doctorInClinic, photos.clinicReception, photos.treatmentRoom, photos.clinicConsult].map(
               (photo, i) => (
                 <Reveal key={photo.alt} delay={i * 0.06} className="overflow-hidden rounded-2xl">
                   <SmartImage photo={photo} className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105" />
