@@ -66,10 +66,12 @@ export const doctor = {
   credentials: 'BDS (Bachelor of Dental Surgery)',
   registration: 'Gujarat Dental Council Reg. No. A-20039',
   role: 'Founder & Chief Dental Surgeon',
-  photo: null, // PLACEHOLDER — drop a real photo in src/assets/ and point src/data/images.js at it
+  // The portrait itself lives in src/data/images.js as `photos.doctorPortrait`
+  // so it is bundled and cache-hashed; this field is unused and kept null.
+  photo: null,
   bio: [
-    // PLACEHOLDER — replace with the doctor's own words: her training,
-    // special interests, and why she started the clinic.
+    // Written for this project and factually accurate, but not the doctor's own
+    // words — worth an edit pass in her voice when she has a moment.
     'Dr. Konika Chhajed Zaveri founded Oracle Dental Care with a simple goal: make world-class dental care feel calm, personal, and accessible for every family in Navsari.',
     'She combines a gentle chairside manner with modern, minimally-invasive techniques — so routine visits stay comfortable and complex treatments stay predictable. Patients most often mention the same two things: that she explains every step clearly, and that treatment was far less painful than they expected.',
   ],

@@ -4,9 +4,11 @@ The official website for **Oracle Dental Care**, a multi-speciality dental clini
 Gujarat, led by Dr. Konika Chhajed Zaveri. Built as a modern React site with a built-in blog the doctor
 can update herself — no code required.
 
-> **Note on content:** most of the text on this site (working hours, team bios, testimonials,
-> some contact details) is placeholder content written to demonstrate the design. Real data still
-> needs to be confirmed — see [Placeholder data to replace](#placeholder-data-to-replace) below.
+> **Note on content:** the clinic's own details — address, phone, working hours, founding date,
+> patient count, and all 40 testimonials — are real and confirmed. What is still stand-in is the
+> photography (apart from Dr. Konika's portrait) and the blog posts, which were written for this
+> project rather than published by the clinic. See
+> [Content still to replace](#content-still-to-replace) below.
 
 ## Tech stack
 
@@ -141,7 +143,9 @@ No GitHub account or technical knowledge is required for the doctor herself.
   images only from the site, Unsplash, and Pexels; fonts only from Google Fonts; the only
   permitted iframe is the Google Maps embed. `object-src` and `frame-ancestors` are `'none'`.
 - **`/admin` gets its own, looser CSP** because Decap CMS is a third-party app loaded from a CDN.
-  It's still allow-listed to the specific hosts the CMS needs (unpkg, DecapBridge, GitHub API).
+  It keeps the structural directives that block real attacks (`frame-ancestors 'none'`,
+  `object-src 'none'`, `base-uri 'self'`) but does not constrain the CMS's own script, network,
+  worker, or blob usage — see the trade-offs below for why.
 - **The CSP is mirrored in `vite.config.js`** under `preview.headers`, so
   `npm run build && npm run preview` reproduces the production policy locally. **If you change the
   policy in one place, change it in the other** — otherwise a violation only surfaces after deploy.
@@ -185,6 +189,13 @@ The code is only half of it. These live in the Netlify, GitHub, and DecapBridge 
   which is the direction that actually matters for XSS.
 - **`/admin` allows `'unsafe-eval'`.** Decap CMS's bundle requires it. This is scoped to the
   `/admin` path only and does not apply to any page a patient visits.
+- **`/admin`'s resource and network directives are not allow-listed.** An earlier, tighter policy
+  here broke image uploads with *"Failed to persist media"* — Decap's real surface (blob workers,
+  `fetch` against `blob:`/`data:` URLs, DecapBridge's own endpoints) is wider than it documents and
+  cannot be enumerated reliably from outside. Since the CMS already loads and `eval`s arbitrary
+  code from a CDN, narrowing `connect-src` beneath that bought little, while breaking the clinic's
+  publishing workflow was expensive. The structural directives above are kept, and the public pages
+  — the ones patients actually visit — keep the strict allow-listed policy.
 
 ## Brand & design system
 
@@ -200,19 +211,47 @@ the site (`bg-primary-50` … `bg-primary-900`, etc.) is derived consistently fr
 colors. Fonts are **Plus Jakarta Sans** (headings) and **Inter** (body text), loaded free from
 Google Fonts.
 
-## Placeholder data to replace
+## Content still to replace
 
-Everything below is mock content used to demonstrate the design — confirm the real values with
-the clinic before launch (all are marked `PLACEHOLDER` in `src/data/site.js`):
+The clinic's factual details in `src/data/site.js` are confirmed and real. Two things are not:
 
-- Working hours
-- Year the clinic was founded (used for the "X+ years" stat)
-- Team members beyond Dr. Konika
-- Patient testimonials (currently illustrative, not real reviews)
-- All photos (currently stock photography — see the "Do you have real photos" note in project
-  history; swap via `src/data/images.js` any time)
-- The 5 sample blog posts are original writing for this project, not content the clinic has
-  actually published — read them before launch and decide whether to keep, edit, or replace them.
+- **Photography.** Dr. Konika's portrait is the clinic's own. Every other photo is licensed stock
+  imagery standing in for the real premises — see [Adding images](#adding-images) to swap them.
+- **The blog posts.** They are original writing produced for this project, not articles the clinic
+  has published. They are accurate and on-brand, but they are ours, not hers — worth a read-through
+  and an edit pass in the doctor's own voice.
+
+## Adding images
+
+There are three ways to get an image into the site. Pick by who is doing it.
+
+### The doctor, for a blog post — the admin panel
+
+In `/admin`, either use the **Cover Image** field on a post, or open the **Media** library from the
+top bar and upload there without creating a post at all. Files land in `public/images/uploads/` and
+are served from `/images/uploads/<filename>`.
+
+If an upload fails with **"Failed to persist media"**, it is almost always file size: these go
+through the GitHub API as base64, so keep uploads **under about 2 MB**. Resize or export the photo
+smaller and try again — a web page never needs a full-resolution camera original.
+
+### Anyone with repo access, any image — GitHub's web uploader
+
+No tooling, no command line, and it takes files up to 25 MB:
+
+1. Go to the repo on github.com and switch to the branch Netlify deploys from.
+2. Navigate into the folder you want — `public/images/uploads/` for blog and general imagery,
+   `src/assets/` for photos referenced from `src/data/images.js`.
+3. **Add file → Upload files**, drag the images in, then **Commit changes** at the bottom.
+
+Netlify rebuilds automatically. This path bypasses the CMS entirely, so it also works as the
+fallback whenever `/admin` is unhappy.
+
+### A developer — commit it
+
+Drop the file in `src/assets/`, import it in `src/data/images.js`, and point the relevant entry's
+`src` at it. Imported assets get content-hashed filenames and long-lived cache headers, which is
+why the doctor's portrait lives here rather than in `public/`.
 
 ## Where the old site went
 
